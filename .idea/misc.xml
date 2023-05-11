@@ -4,11 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/bottom_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/deneme.xml" value="0.1795" />
+        <entry key="app/src/main/res/drawable/film_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rv_background.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/top_background.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/top_background_gradient.xml" value="0.1795" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17980072463768115" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/film_cardview.xml" value="0.335" />
       </map>
     </option>
   </component>
