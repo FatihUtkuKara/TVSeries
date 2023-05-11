@@ -7,10 +7,13 @@
         <entry key="app/src/main/res/drawable/bottom_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/deneme.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/film_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.255" />
+        <entry key="app/src/main/res/drawable/more.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/purple_background.xml" value="0.2475" />
         <entry key="app/src/main/res/drawable/rv_background.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/top_background.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/top_background_gradient.xml" value="0.1795" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.13003997802734374" />
         <entry key="app/src/main/res/layout/film_cardview.xml" value="0.335" />
       </map>
     </option>
