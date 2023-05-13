@@ -1,22 +1,22 @@
 package com.example.tvseries
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class FilmRvAdapter(private val mContext: Context, private val filmList:List<Films>) : RecyclerView.Adapter<FilmRvAdapter.CardViewDesignObjectHolder>() {
+class SeriesRvAdapter(private val mContext: Context, private val seriesList: List<Series>) : RecyclerView.Adapter<SeriesRvAdapter.CardViewDesignObjectHolder>() {
 
     inner class CardViewDesignObjectHolder(view: View): RecyclerView.ViewHolder(view) {
-        var filmCardView: CardView
+        var seriesCardView: CardView
         var cardImage: ImageView
         init {
-            filmCardView = view.findViewById(R.id.filmCardView)
+            seriesCardView = view.findViewById(R.id.filmCardView)
             cardImage = view.findViewById(R.id.card_image)
         }
     }
@@ -28,37 +28,40 @@ class FilmRvAdapter(private val mContext: Context, private val filmList:List<Fil
     }
 
     override fun onBindViewHolder(holder: CardViewDesignObjectHolder, position: Int) {
-        val film = filmList[position]
-        if (film.filmNo==1) {
+        val series = seriesList[position]
+        if (series.seriesNo==1) {
             holder.cardImage.setBackgroundResource(R.drawable.breakingbad)
 
         }
-        else if (film.filmNo==2) {
+        else if (series.seriesNo==2) {
             holder.cardImage.setBackgroundResource(R.drawable.vikings)
 
         }
-        if (film.filmNo==3) {
+        if (series.seriesNo==3) {
             holder.cardImage.setBackgroundResource(R.drawable.got)
 
         }
-        if (film.filmNo==4) {
+        if (series.seriesNo==4) {
             holder.cardImage.setBackgroundResource(R.drawable.breakingbad)
 
         }
-        if (film.filmNo==5) {
+        if (series.seriesNo==5) {
             holder.cardImage.setBackgroundResource(R.drawable.vikings)
 
         }
-        if (film.filmNo==6) {
+        if (series.seriesNo==6) {
             holder.cardImage.setBackgroundResource(R.drawable.got)
-
         }
+        holder.seriesCardView.setOnClickListener(View.OnClickListener {
+            val intent = Intent(mContext, DetailActivity::class.java)
+            mContext.startActivity(intent)
+        })
 
 
     }
 
     override fun getItemCount(): Int {
-        return filmList.size
+        return seriesList.size
     }
 
 

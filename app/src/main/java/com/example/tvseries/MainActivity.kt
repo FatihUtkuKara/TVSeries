@@ -1,35 +1,42 @@
 package com.example.tvseries
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.util.Log
+import android.view.View
+import android.widget.ImageButton
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rv : RecyclerView
-    private lateinit var filmList : ArrayList<Films>
-    private lateinit var adapter: FilmRvAdapter
+    private lateinit var filmList : ArrayList<Series>
+    private lateinit var adapter: SeriesRvAdapter
+    private lateinit var seriesButton : ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        seriesButton = findViewById(R.id.seriesButton)
         rv = findViewById(R.id.rv_film)
 
         rv.setHasFixedSize(true)
 
         rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)
 
-        val i1 = Films(1)
-        val i2 = Films(2)
-        val i3 = Films(3)
-        val i4 = Films(4)
-        val i5 = Films(5)
-        val i6 = Films(6)
+        val i1 = Series(1)
+        val i2 = Series(2)
+        val i3 = Series(3)
+        val i4 = Series(4)
+        val i5 = Series(5)
+        val i6 = Series(6)
 
 
-        filmList = ArrayList<Films>()
+        filmList = ArrayList<Series>()
         filmList.add(i1)
         filmList.add(i2)
         filmList.add(i3)
@@ -37,8 +44,24 @@ class MainActivity : AppCompatActivity() {
         filmList.add(i5)
         filmList.add(i6)
 
-        adapter = FilmRvAdapter(this,filmList)
+        adapter = SeriesRvAdapter(this,filmList)
 
         rv.adapter = adapter
+
+        seriesButton.setOnClickListener { view ->
+            onSeriesButtonClick(view)
+        }
+
+    }
+    private fun onSeriesButtonClick(view: View) {
+
+        Log.d("SeriesButton", "Series button clicked!")
+
+        val intent = Intent(this, SeriesActivity::class.java)
+        startActivity(intent)
     }
 }
+
+
+
+
