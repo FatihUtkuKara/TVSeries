@@ -2,25 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="150dp"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/filmCardView"
-        android:layout_width="120dp"
-        android:layout_height="150dp"
-        android:background="#5e3bee">
+        android:layout_width="143dp"
+        android:layout_height="170dp"
+        android:background="#000000"
+        app:cardCornerRadius="10dp"
+        android:gravity="center">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#5e3bee">
+            android:background="#5C469C">
 
             <ImageView
                 android:id="@+id/card_image"
-                android:layout_width="110dp"
-                android:layout_height="150dp"
+                android:layout_width="120dp"
+                android:layout_height="140dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
