@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.tvseries.model.Results
 import com.example.tvseries.model.SeriesInfo
 import com.example.tvseries.retrofit.ApiUtils
 import com.example.tvseries.retrofit.SeriesDaoInterface
@@ -18,6 +16,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+    lateinit var seriesInfo : SeriesInfo
     private var seriesDıf: SeriesDaoInterface? = null
     private lateinit var rv : RecyclerView
     private lateinit var filmList : ArrayList<Series>
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         filmList.add(i4)
         filmList.add(i5)
         filmList.add(i6)
-
+        getSeries()
         adapter = SeriesRvAdapter(this,filmList)
 
         rv.adapter = adapter
@@ -58,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             onSeriesButtonClick(view)
         }
 
-getSeries()
+
     }
     private fun onSeriesButtonClick(view: View) {
 
@@ -85,7 +84,10 @@ getSeries()
             override fun onResponse(call: Call<SeriesInfo?>, response: Response<SeriesInfo?>) {
                 //val countries: List<Results> = java.util.ArrayList<Country>()
                 val series: SeriesInfo? = response.body()
-                var name2 = series!!.statusCode
+                val i7 = Series(series!!.keywords[0]!!.id!!.toInt())
+
+             filmList.add(i7)
+                adapter.notifyDataSetChanged()
 
             }
 
