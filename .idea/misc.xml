@@ -19,7 +19,7 @@
         <entry key="app/src/main/res/drawable/top_background_gradient.xml" value="0.1795" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.18840579710144928" />
         <entry key="app/src/main/res/layout/activity_films.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="app/src/main/res/layout/film_cardview.xml" value="0.25" />
         <entry key="app/src/main/res/layout/series_cardview.xml" value="0.1574074074074074" />
       </map>

@@ -11,13 +11,13 @@
         android:layout_width="143dp"
         android:layout_height="170dp"
         android:background="#000000"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="12dp"
         android:gravity="center">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#5C469C">
+            android:background="@drawable/purple_background">
 
             <ImageView
                 android:id="@+id/card_image"

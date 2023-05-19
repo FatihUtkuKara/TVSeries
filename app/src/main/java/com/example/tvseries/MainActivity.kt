@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         filmList.add(i4)
         filmList.add(i5)
         filmList.add(i6)
-        getSeries()
+       // getSeries()
         adapter = SeriesRvAdapter(this,filmList)
 
         rv.adapter = adapter

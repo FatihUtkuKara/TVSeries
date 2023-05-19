@@ -11,7 +11,10 @@
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="220dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,11 +24,11 @@
         android:id="@+id/imageView6"
         android:layout_width="250dp"
         android:layout_height="100dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="185dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rv_background" />
+        app:srcCompat="@drawable/purple_background" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -36,13 +39,13 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:srcCompat="@drawable/purple_background" />
+        app:srcCompat="@drawable/rv_background" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="113dp"
         android:layout_height="110dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -71,7 +74,7 @@
         app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:srcCompat="@drawable/purple_background" />
+        app:srcCompat="@drawable/rv_background" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_film"
@@ -93,7 +96,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:srcCompat="@drawable/purple_background" />
+        app:srcCompat="@drawable/rv_background" />
 
     <TextView
         android:id="@+id/textView2"
@@ -175,10 +178,10 @@
         android:layout_width="120dp"
         android:layout_height="65dp"
         android:background="@drawable/button_background"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -187,6 +190,7 @@
         android:layout_marginStart="98dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="94dp"
+        android:visibility="gone"
 
         android:drawableEnd="@drawable/search_icon"
         android:ems="10"
@@ -200,19 +204,17 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:layout_marginBottom="25dp"
-        android:text="for more"
-        android:visibility="gone"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="..."
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="40dp"
         android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/imageView12"
         app:layout_constraintEnd_toEndOf="@+id/seriesButton"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/seriesButton"
-        app:layout_constraintTop_toTopOf="@+id/seriesButton"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/seriesButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
