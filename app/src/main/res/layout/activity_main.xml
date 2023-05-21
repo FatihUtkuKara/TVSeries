@@ -96,11 +96,13 @@
         app:srcCompat="@drawable/rv_background" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textSecond"
         android:layout_width="60dp"
         android:layout_height="18dp"
+        android:textStyle="bold"
         android:gravity="center"
         android:text="Vikings"
+        android:textColor="#7678ed"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView7"
         app:layout_constraintHorizontal_bias="1.0"
@@ -146,11 +148,13 @@
         app:srcCompat="@drawable/breakingbad" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textStyle="bold"
         android:text="Breaking Bad"
+        android:textColor="#7678ed"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
@@ -158,11 +162,13 @@
         app:textAllCaps="false" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textThird"
         android:layout_width="59dp"
         android:layout_height="17dp"
         android:gravity="center"
         android:text="Vikings"
+        android:textStyle="bold"
+        android:textColor="#7678ed"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.833"
@@ -191,12 +197,13 @@
         android:layout_marginEnd="94dp"
         android:layout_marginBottom="88dp"
         android:drawableEnd="@drawable/search_icon"
-        android:textColor="#FFFFFF"
+        android:textColor="#7678ed"
         android:textSize="20dp"
         android:textStyle="bold"
         android:ems="10"
         android:hint="Search for..."
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#7678ed"
+        android:gravity="center"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
