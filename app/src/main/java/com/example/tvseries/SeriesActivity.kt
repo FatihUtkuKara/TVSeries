@@ -21,12 +21,12 @@ class SeriesActivity : AppCompatActivity() {
 
         rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL)
 
-        val i1 = Series(1)
-        val i2 = Series(2)
-        val i3 = Series(3)
-        val i4 = Series(4)
-        val i5 = Series(5)
-        val i6 = Series(6)
+        val i1 = Series(1,"peaky")
+        val i2 = Series(2,"peaky")
+        val i3 = Series(3,"peaky")
+        val i4 = Series(4,"braking")
+        val i5 = Series(5,"game of thrones")
+        val i6 = Series(6,"vikings")
 
         seriesList = ArrayList<Series>()
         seriesList.add(i1)

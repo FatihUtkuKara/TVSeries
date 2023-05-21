@@ -2,6 +2,8 @@ package com.example.tvseries
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -36,12 +38,12 @@ class MainActivity : AppCompatActivity() {
 
         rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)
 
-        val i1 = Series(1)
-        val i2 = Series(2)
-        val i3 = Series(3)
-        val i4 = Series(4)
-        val i5 = Series(5)
-        val i6 = Series(6)
+        val i1 = Series(1,"peaky")
+        val i2 = Series(2,"peaky")
+        val i3 = Series(3,"peaky")
+        val i4 = Series(4,"braking")
+        val i5 = Series(5,"game of thrones")
+        val i6 = Series(6,"vikings")
 
 
         filmList = ArrayList<Series>()
@@ -65,7 +67,47 @@ class MainActivity : AppCompatActivity() {
             seriesAdapter.updateData(filteredFilmList)
         }
 
+        search.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Değişiklik öncesi işlemler
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // Metin değiştiğinde yapılacak işlemler
+                /*val searchQuery = search.text.toString()
+                if (searchQuery.isNotEmpty()) {
+                    val filteredFilmList = filterSeriesBySearchQuery(filmList, searchQuery)
+                    seriesAdapter.updateData(filteredFilmList)
+
+                    filteredFilmList.clear()
+                    seriesAdapter.notifyDataSetChanged()
+
+
+                } */
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                val searchQuery = search.text.toString()
+                if (searchQuery.isEmpty()) {
+                    // Metin boş olduğunda tüm filmleri göstermek için gerekli işlemleri yapabilirsiniz.
+                    filmList.clear()
+                    filmList.add(i1)
+                    filmList.add(i2)
+                    filmList.add(i3)
+                    filmList.add(i4)
+                    filmList.add(i5)
+                    filmList.add(i6)
+                }
+                    else {
+                        val filteredFilmList = filterSeriesBySearchQuery(filmList, searchQuery)
+                        seriesAdapter.updateData(filteredFilmList)
+                    }
+
+            }
+        })
     }
+
+
     private fun onSeriesButtonClick(view: View) {
 
         Log.d("SeriesButton", "Series button clicked!")
@@ -74,20 +116,20 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun filterSeriesBySearchQuery(movieList: List<Series>, searchQuery: String): List<Series> {
+    fun filterSeriesBySearchQuery(filmList: List<Series>, searchQuery: String): List<Series> {
         val filteredList = mutableListOf<Series>()
         for (series in filmList) {
             if (series.name.contains(searchQuery, ignoreCase = true)) {
-                filteredList.add(movie)
-                //TODO Burada movie nesnesi oluşturulmuş seriese çevrilecek ve series sınıfı değiştirilecek series name alacak.
+                filteredList.add(series)
+
             }
         }
         return filteredList
     }
 
     fun SeriesRvAdapter.updateData(newMovieList: List<Series>) {
-        movieList.clear()
-        movieList.addAll(newMovieList)
+        filmList.clear()
+        filmList.addAll(newMovieList)
         notifyDataSetChanged()
     }
 
@@ -107,10 +149,10 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<SeriesInfo?>, response: Response<SeriesInfo?>) {
                 val series: SeriesInfo? = response.body()
-                val i7 = Series(series!!.keywords[0]!!.id!!.toInt())
+                val i7 = Series(series!!.keywords[0]!!.id!!.toInt(),series!!.keywords[0]!!.name.toString())
 
              filmList.add(i7)
-                adapter.notifyDataSetChanged()
+                seriesAdapter.notifyDataSetChanged()
 
             }
 
@@ -120,7 +162,9 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+
 }
+
 
 
 
