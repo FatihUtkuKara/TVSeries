@@ -19,7 +19,7 @@ class SeriesActivity : AppCompatActivity() {
 
         rv.setHasFixedSize(true)
 
-        rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL)
+        rv.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
 
         val i1 = Series(1,"peaky")
         val i2 = Series(2,"peaky")
