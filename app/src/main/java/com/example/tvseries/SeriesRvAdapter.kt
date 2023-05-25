@@ -30,15 +30,15 @@ class SeriesRvAdapter(private val mContext: Context, private val seriesList: Lis
     override fun onBindViewHolder(holder: CardViewDesignObjectHolder, position: Int) {
         val series = seriesList[position]
         if (series.seriesNo==1) {
-            holder.cardImage.setBackgroundResource(R.drawable.breakingbad)
+            holder.cardImage.setBackgroundResource(R.drawable.peaky)
 
         }
         else if (series.seriesNo==2) {
-            holder.cardImage.setBackgroundResource(R.drawable.vikings)
+            holder.cardImage.setBackgroundResource(R.drawable.office)
 
         }
         if (series.seriesNo==3) {
-            holder.cardImage.setBackgroundResource(R.drawable.got)
+            holder.cardImage.setBackgroundResource(R.drawable.himym)
 
         }
         if (series.seriesNo==4) {
@@ -46,14 +46,33 @@ class SeriesRvAdapter(private val mContext: Context, private val seriesList: Lis
 
         }
         if (series.seriesNo==5) {
-            holder.cardImage.setBackgroundResource(R.drawable.vikings)
+            holder.cardImage.setBackgroundResource(R.drawable.got)
 
         }
         if (series.seriesNo==6) {
-            holder.cardImage.setBackgroundResource(R.drawable.got)
+            holder.cardImage.setBackgroundResource(R.drawable.vikings)
+        }
+        if (series.seriesNo==7) {
+            holder.cardImage.setBackgroundResource(R.drawable.afterlife)
+        }
+        if (series.seriesNo==8) {
+            holder.cardImage.setBackgroundResource(R.drawable.spartacus)
+        }
+        if (series.seriesNo==9) {
+            holder.cardImage.setBackgroundResource(R.drawable.familyguy)
+        }
+        if (series.seriesNo==10) {
+            holder.cardImage.setBackgroundResource(R.drawable.narcos)
+        }
+        if (series.seriesNo==11) {
+            holder.cardImage.setBackgroundResource(R.drawable.bandofbrothers)
+        }
+        if (series.seriesNo==12) {
+            holder.cardImage.setBackgroundResource(R.drawable.ottoman)
         }
         holder.seriesCardView.setOnClickListener(View.OnClickListener {
             val intent = Intent(mContext, DetailActivity::class.java)
+            intent.putExtra("seriesCode",series.code)
             mContext.startActivity(intent)
         })
 

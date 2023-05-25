@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -20,17 +21,22 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     lateinit var seriesInfo : SeriesInfo
-    private var seriesDıf: SeriesDaoInterface? = null
     private lateinit var rv : RecyclerView
     private lateinit var filmList : ArrayList<Series>
     private lateinit var seriesAdapter: SeriesRvAdapter
     private lateinit var seriesButton : ImageButton
     private lateinit var search : EditText
+    private lateinit var first : ImageView
+    private lateinit var second : ImageView
+    private lateinit var third : ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         search = findViewById(R.id.search)
-        seriesDıf = ApiUtils.getSeriesDaoInterface()
+        first = findViewById(R.id.firstImage)
+        second = findViewById(R.id.secondImage)
+        third = findViewById(R.id.thirdImage)
         seriesButton = findViewById(R.id.seriesButton)
         rv = findViewById(R.id.rv_film)
 
@@ -38,22 +44,34 @@ class MainActivity : AppCompatActivity() {
 
         rv.layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.HORIZONTAL)
 
-        val i1 = Series(1,"peaky")
-        val i2 = Series(2,"peaky")
-        val i3 = Series(3,"peaky")
-        val i4 = Series(4,"braking")
-        val i5 = Series(5,"game of thrones")
-        val i6 = Series(6,"vikings")
+        val series1 = Series(1,"peakyBlinders","tt2442560")
+        val series2 = Series(2,"office","tt0386676")
+        val series3 = Series(3,"himym","tt0460649")
+        val series4 = Series(4,"breakingBad","tt0903747")
+        val series5 = Series(5,"gameOfThrones","tt0944947")
+        val series6 = Series(6,"vikings","tt2306299")
+        val series7 = Series(7,"afterLife","tt8398600")
+        val series8 = Series(8,"spartacus","tt1442449")
+        val series9 = Series(9,"familyGuy","tt0182576")
+        val series10 = Series(10,"narcos","tt2707408")
+        val series11 = Series(11,"bandOfBrothers","tt0185906")
+        val series12 = Series(12,"riseOfEmpiresOttoman","tt9244578")
 
 
         filmList = ArrayList<Series>()
-        filmList.add(i1)
-        filmList.add(i2)
-        filmList.add(i3)
-        filmList.add(i4)
-        filmList.add(i5)
-        filmList.add(i6)
-        //getSeries()
+        filmList.add(series1)
+        filmList.add(series2)
+        filmList.add(series3)
+        filmList.add(series4)
+        filmList.add(series5)
+        filmList.add(series6)
+        filmList.add(series7)
+        filmList.add(series8)
+        filmList.add(series9)
+        filmList.add(series10)
+        filmList.add(series11)
+        filmList.add(series12)
+
         seriesAdapter = SeriesRvAdapter(this,filmList)
 
         rv.adapter = seriesAdapter
@@ -69,34 +87,28 @@ class MainActivity : AppCompatActivity() {
 
         search.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // Değişiklik öncesi işlemler
+
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // Metin değiştiğinde yapılacak işlemler
-                /*val searchQuery = search.text.toString()
-                if (searchQuery.isNotEmpty()) {
-                    val filteredFilmList = filterSeriesBySearchQuery(filmList, searchQuery)
-                    seriesAdapter.updateData(filteredFilmList)
 
-                    filteredFilmList.clear()
-                    seriesAdapter.notifyDataSetChanged()
-
-
-                } */
             }
 
             override fun afterTextChanged(s: Editable?) {
                 val searchQuery = search.text.toString()
                 if (searchQuery.isEmpty()) {
-                    // Metin boş olduğunda tüm filmleri göstermek için gerekli işlemleri yapabilirsiniz.
-                    filmList.clear()
-                    filmList.add(i1)
-                    filmList.add(i2)
-                    filmList.add(i3)
-                    filmList.add(i4)
-                    filmList.add(i5)
-                    filmList.add(i6)
+                    filmList.add(series1)
+                    filmList.add(series2)
+                    filmList.add(series3)
+                    filmList.add(series4)
+                    filmList.add(series5)
+                    filmList.add(series6)
+                    filmList.add(series7)
+                    filmList.add(series8)
+                    filmList.add(series9)
+                    filmList.add(series10)
+                    filmList.add(series11)
+                    filmList.add(series12)
                 }
                     else {
                         val filteredFilmList = filterSeriesBySearchQuery(filmList, searchQuery)
@@ -105,6 +117,24 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
+
+        first.setOnClickListener{
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("seriesCode","tt2306299")
+            startActivity(intent)
+        }
+
+        second.setOnClickListener{
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("seriesCode","tt2442560")
+            startActivity(intent)
+        }
+
+        third.setOnClickListener{
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("seriesCode","tt0944947")
+            startActivity(intent)
+        }
     }
 
 
@@ -132,36 +162,6 @@ class MainActivity : AppCompatActivity() {
         filmList.addAll(newMovieList)
         notifyDataSetChanged()
     }
-
-    fun getSeries() {
-
-        val idsMap = mutableMapOf<String, String>()
-        idsMap["i"] = "tt7366338"
-        idsMap["rapidapi-key"] = "937fd7ae42msh786c9c0f55dcc3bp19ba92jsn79ec7f5dd574"
-
-        //val call = getSeries(idsMap)
-
-        var id: String
-        id = "tt7366338,tt1475582,tt5753856,tt0944947,tt0460649,tt1442437," +
-                "tt10048342"
-
-        seriesDıf!!.getSeries(idsMap)!!.enqueue(object : Callback<SeriesInfo?> {
-
-            override fun onResponse(call: Call<SeriesInfo?>, response: Response<SeriesInfo?>) {
-                val series: SeriesInfo? = response.body()
-                val i7 = Series(series!!.keywords[0]!!.id!!.toInt(),series!!.keywords[0]!!.name.toString())
-
-             filmList.add(i7)
-                seriesAdapter.notifyDataSetChanged()
-
-            }
-
-            override fun onFailure(call: Call<SeriesInfo?>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-        })
-    }
-
 
 }
 

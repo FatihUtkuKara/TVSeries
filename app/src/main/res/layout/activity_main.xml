@@ -95,37 +95,24 @@
         app:layout_constraintTop_toTopOf="@+id/imageView6"
         app:srcCompat="@drawable/rv_background" />
 
-    <TextView
-        android:id="@+id/textSecond"
-        android:layout_width="60dp"
-        android:layout_height="18dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:text="Vikings"
-        android:textColor="#7678ed"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:textAllCaps="false" />
+
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
+        android:id="@+id/firstImage"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:srcCompat="@drawable/breakingbad" />
+        app:srcCompat="@drawable/vikings" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
+        android:id="@+id/thirdImage"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
@@ -133,48 +120,22 @@
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:srcCompat="@drawable/breakingbad" />
+        app:srcCompat="@drawable/got" />
 
     <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
+        android:id="@+id/secondImage"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:srcCompat="@drawable/breakingbad" />
+        app:srcCompat="@drawable/peaky" />
 
-    <TextView
-        android:id="@+id/textFirst"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="Breaking Bad"
-        android:textColor="#7678ed"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:textAllCaps="false" />
 
-    <TextView
-        android:id="@+id/textThird"
-        android:layout_width="59dp"
-        android:layout_height="17dp"
-        android:gravity="center"
-        android:text="Vikings"
-        android:textStyle="bold"
-        android:textColor="#7678ed"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.833"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:textAllCaps="false" />
+
 
     <ImageButton
         android:id="@+id/seriesButton"
@@ -197,12 +158,12 @@
         android:layout_marginEnd="94dp"
         android:layout_marginBottom="88dp"
         android:drawableEnd="@drawable/search_icon"
-        android:textColor="#7678ed"
+        android:textColor="#e8e8f9"
         android:textSize="20dp"
         android:textStyle="bold"
         android:ems="10"
         android:hint="Search for..."
-        android:textColorHint="#7678ed"
+        android:textColorHint="#e8e8f9"
         android:gravity="center"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/imageView12"
@@ -225,6 +186,36 @@
         app:layout_constraintEnd_toEndOf="@+id/seriesButton"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="@+id/seriesButton" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="41dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondImage"
+        app:srcCompat="@drawable/second" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="41dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thirdImage"
+        app:srcCompat="@drawable/third" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstImage"
+        app:srcCompat="@drawable/medal" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
