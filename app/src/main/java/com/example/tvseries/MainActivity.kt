@@ -147,6 +147,8 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, SeriesActivity::class.java)
         startActivity(intent)
+        overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down)
+
     }
 
     fun filterSeriesBySearchQuery(filmList: List<Series>, searchQuery: String): List<Series> {
