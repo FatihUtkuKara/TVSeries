@@ -122,18 +122,21 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("seriesCode","tt2306299")
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up)
         }
 
         second.setOnClickListener{
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("seriesCode","tt2442560")
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up)
         }
 
         third.setOnClickListener{
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("seriesCode","tt0944947")
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up)
         }
     }
 
