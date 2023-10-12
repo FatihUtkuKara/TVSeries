@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onSeriesButtonClick(view: View) {
 
-        Log.d("SeriesButton", "Series button clicked!")
+        Log.d("SeriesButton", "Series button clicked!!")
 
         val intent = Intent(this, SeriesActivity::class.java)
         startActivity(intent)
